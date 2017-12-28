@@ -1,22 +1,24 @@
 String messageFromBinaryCode(String code) {
-	    String result = "";
-	    ArrayList<String> list = new ArrayList<>();
-	    int i=0;
-	    while(true){
+	String result = "";
+	ArrayList<String> list = new ArrayList<>();
+	int i=0;
+	while(true){
 
-	        list.add(code.substring(8*i, 8*i+8));
-	        i++;
+			list.add(code.substring(8*i, 8*i+8));
+			System.out.println(list.get(i));
 
-	        if(8*i+8>=code.length()){
-	            break;
-	        }
-	    }
 
-	    for(String a : list){
-	        result += stringToChar(a);
-	    }
+			if(8*i+8>=code.length()){
+					break;
+			}
+			i++;
+	}
 
-	    return result;
+	for(String a : list){
+			result += stringToChar(a);
+	}
+
+	return result;
 	}
 
 	public String stringToChar(String a){
